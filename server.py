@@ -8,6 +8,11 @@ CORS(app)
 
 stocks_list = ["RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS", "TATAMOTORS.NS", "SBIN.NS", "BHARTIARTL.NS"]
 
+# मुख्य पेजसाठी रूट पाथ (404 एरर घालवण्यासाठी)
+@app.route('/', methods=['GET'])
+def home():
+    return "GTF Scanner Backend is Live and Running successfully!"
+
 @app.route('/api/scan', methods=['GET'])
 def scan_market():
     scanned_data = []
